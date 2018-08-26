@@ -1,10 +1,10 @@
 {
     "name": "node-merged-pool",
-    "version": "1.0.0",
+    "version": "1.0.8",
     "description": "High performance Stratum poolserver in Node.js for merged mining",
     "keywords": [
         "stratum",
-	"merged",
+        "merged",
         "mining",
         "pool",
         "server",
@@ -22,7 +22,7 @@
     "license": "GPL-2.0",
     "author": "Daniel Beal",
     "contributors": [
-	"zone117x",
+        "zone117x",
         "vekexasia",
         "TheSeven",
         "sigwo",
@@ -34,14 +34,22 @@
         "url": "https://github.com/nzsquirrell/node-merged-pool.git"
     },
     "dependencies": {
-        "multi-hashing": "git+https://github.com/nzsquirrell/node-multi-hashing.git",
-        "bignum": "*",
-        "base58-native": "*",
-        "async": "*",
-        "redis": "*",
+        "multi-hashing": "file:../node-multi-hashing",
+        "bignum": {
+			"version": "^0.12.5",
+			"from": "bignum@0.12.5",
+			"dependencies": {
+				"node-pre-gyp": {
+					"version": "0.7.0",
+					"from": "node-pre-gyp@0.6.39"
+				}
+			}
+		},
+        "base58-native": "^0.1.4",
+        "async": "^2.5.0",
 		"bitcoinjs-lib": "^3.3.2"
     },
     "engines": {
-        "node": ">=0.10"
+        "node": ">=8.1.4"
     }
 }
